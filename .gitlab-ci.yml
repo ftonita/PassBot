@@ -1,0 +1,43 @@
+stages:
+  - build
+  - style_tests
+  - integration_tests
+  - deploy
+
+Build:
+  stage: build
+  tags:
+    - blackwoo
+  script:
+    - cd src
+    - make build
+  artifacts:
+    paths:
+      - src/artifacts/telegram.py
+      - src/artifacts/sql.py
+    expire_in: 30 days
+
+Style_Tests:
+  stage: style_tests
+  tags:
+    - blackwoo
+  script:
+    - make lint
+
+Integration_Tests:
+  stage: integration_tests
+  tags:
+    - blackwoo
+  script:
+    - cd src
+    - make test
+
+Deploy:
+  stage: deploy
+  when: manual
+  tags:
+    - blackwoo
+  script:
+    - cd src
+    - scp *.py root@192.168.100.11:/usr/local/bin/
+
