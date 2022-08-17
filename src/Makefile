@@ -16,5 +16,6 @@ git:
 	git add .
 	git commit -m 'кто прочёл, тот осёл'
 	git push origin develop
+
 docker:
 	docker-compose up --build
