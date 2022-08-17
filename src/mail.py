@@ -15,9 +15,9 @@ def send_email(message):
         msg["Subject"] = "Твой код подтверждения для PassBot21"
         server.sendmail(sender, receiver, msg.as_string())
 
-        return "The message was send succsesfully."
+        return "The message was send succsesfully"
     except Exception as _ex:
-        return f"{_ex}\nCheck your login or password, and try again."
+        return f"{_ex}\nCheck your login or password, and try again"
 
 def main():
     message = input("Type your message: ")
