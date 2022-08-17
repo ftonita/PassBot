@@ -4,7 +4,7 @@ from email.mime.text import MIMEText
 def send_email(message):
     sender = "21passbot@gmail.com"
     password = "rgvbephtmlysitga"
-    receiver = "ieshachr@student.21-school.ru"
+    receiver = "blackwoo@student.21-school.ru"
 
     server = smtplib.SMTP("smtp.gmail.com", 587)
     server.starttls()
