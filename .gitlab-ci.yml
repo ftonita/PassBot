@@ -13,7 +13,7 @@ Build:
     - python3 *.py
   artifacts:
     paths:
-      - src/artifacts/*.py
+      - src/prototype/artifacts/*.py
     expire_in: 30 days
 
 Style_Tests:
