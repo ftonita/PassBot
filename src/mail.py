@@ -12,7 +12,7 @@ def send_email(message):
     try:
         server.login(sender, password)
         msg = MIMEText(message)
-        msg["Subject"] = "Твой код подтверждения для PassBot21."
+        msg["Subject"] = "Твой код подтверждения для PassBot21"
         server.sendmail(sender, receiver, msg.as_string())
 
         return "The message was send succsesfully."
