@@ -14,7 +14,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
     volumes:
-      - ./container_artifacts/mysql_db:/var/lib/mysql
+      - ./container_artifacts/mysql_db/:/var/lib/mysql/
     ports:
       - "3306:3306"
   
