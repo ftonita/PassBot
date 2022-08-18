@@ -3,7 +3,7 @@ services:
   php-env:
     build: .
     volumes:
-      - ./php-env:/var/www/html
+      - ./container_artifacts/php-env:/var/www/html
     ports:
       - "9000:80"
 
@@ -14,7 +14,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
     volumes:
-      - ./mysql_db:/var/lib/mysql
+      - ./container_artifacts/mysql_db:/var/lib/mysql
     ports:
       - "3306:3306"
   
