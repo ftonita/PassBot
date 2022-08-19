@@ -1,8 +1,6 @@
 stages:
   - build
   - style_tests
-  - integration_tests
-  - deploy
 
 Build:
   stage: build
@@ -11,10 +9,6 @@ Build:
   script:
     - cd src/prototype
     - python3 *.py
-  artifacts:
-    paths:
-      - src/prototype/artifacts/*.py
-    expire_in: 30 days
 
 Style_Tests:
   stage: style_tests
@@ -23,21 +17,3 @@ Style_Tests:
   script:
     - cd src/prototype
     - pycodestyle *.py
-
-Integration_Tests:
-  stage: integration_tests
-  tags:
-    - blackwoo
-  script:
-    - cd src/prototype
-    - make test
-
-Deploy:
-  stage: deploy
-  when: manual
-  tags:
-    - blackwoo
-  script:
-    - cd src/prototype
-    - scp *.py root@192.168.100.11:/usr/local/bin/
-
