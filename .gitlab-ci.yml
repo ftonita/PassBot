@@ -1,7 +1,6 @@
 stages:
   - build
-  - style_tests
-
+  
 Build:
   stage: build
   tags:
@@ -9,11 +8,3 @@ Build:
   script:
     - cd src/prototype
     - make build
-
-Style_Tests:
-  stage: style_tests
-  tags:
-    - blackwoo
-  script:
-    - cd src/prototype
-    - make pep8
