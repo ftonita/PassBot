@@ -2,7 +2,7 @@ from curses.ascii import isalnum
 import sys
 import mysql.connector
 
-from prototype.basicui.classic_utils import print_log
+from classic_utils import *
 
 cnx = mysql.connector.connect(user='root', password='root',
 							host='10.178.131.232',

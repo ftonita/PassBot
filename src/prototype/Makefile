@@ -1,7 +1,7 @@
 all: clean build test
 
 build:
-	@python3 *.py
+	@python3 main.py
 
 clean:
 	@/bin/rm -rf *.o *.a *.gcno *gcda report *.info *.out *.dSYM *.cfg
