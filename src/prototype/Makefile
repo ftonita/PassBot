@@ -1,8 +1,5 @@
 all: clean build test
 
-test:
-
-
 build:
 	@python3 *.py
 
