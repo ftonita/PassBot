@@ -8,7 +8,7 @@ Build:
     - blackwoo
   script:
     - cd src/prototype
-    - python3 *.py
+    - make build
 
 Style_Tests:
   stage: style_tests
@@ -16,4 +16,4 @@ Style_Tests:
     - blackwoo
   script:
     - cd src/prototype
-    - pycodestyle *.py
+    - make pep8
