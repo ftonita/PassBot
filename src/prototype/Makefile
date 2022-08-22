@@ -1,4 +1,4 @@
-all: clean build test
+all: clean build #test
 
 build:
 	@python3 main.py

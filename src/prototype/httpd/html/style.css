@@ -1,0 +1,180 @@
+
+.page-header {
+  box-sizing: border-box;
+  position: absolute;
+  left: -0.14%;
+  right: -0.14%;
+  top: -0.2%;
+  bottom: 91.31%;
+  height: 91px;
+  background: #161D27;
+  border: 2px solid #861BE3;
+}
+
+.logo {
+  /* position: absolute; */
+  display: block;
+  margin: 0 auto;
+  width: 146px;
+  height: 76px;
+  left: 647px;
+  top: 6px;
+  background: url(logo_school.png);
+}
+
+.text {
+  position: absolute;
+  text-align: center;
+  width: 560px;
+  height: 49px;
+  left: 439px;
+  top: 374px;
+  
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 49px;
+  /* identical to box height */
+  
+  
+  color: #000000;
+}
+
+.text2 {
+  position: absolute;
+  text-align: center;
+  width: 174px;
+  height: 24px;
+  left: 631px;
+  top: 468px;
+  
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  
+  color: #000000;
+}
+
+
+/* .spiral {
+  position: absolute;
+  width: 1348.77px;
+  height: 1348.77px;
+  left: -1044px;
+  top: -312.19px;
+  
+  transform: rotate(-29.04deg);
+}
+
+.ball {
+  position: absolute;
+  left: 70.83%;
+  right: 14.55%;
+  top: 49.56%;
+  bottom: 29.88%;
+  
+  transform: rotate(-142.36deg);
+}
+
+.conus {
+  position: absolute;
+  width: 818px;
+  height: 818px;
+  left: 750px;
+  top: 773.07px;
+  
+  transform: rotate(-25.57deg);
+}
+
+.text {
+position: absolute;
+width: 259.8px;
+height: 198.13px;
+left: 286.7px;
+top: 821px;
+
+color: rgba(0, 0, 0, 0.1);
+
+transform: rotate(24.49deg);
+} */
+
+
+
+
+*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a, button {
+  cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol, ul, menu {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-width: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+input, textarea {
+  -webkit-user-select: auto;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+  -webkit-appearance: revert;
+  appearance: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+  color: unset;
+}
+
+/* fix the feature of 'hidden' attribute.
+ display:revert; revert to element instead of attribute */
+:where([hidden]) {
+  display: none;
+}
+
+/* revert for bug in Chromium browsers
+ - fix for the content editable attribute will work properly.
+ - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
+:where([contenteditable]:not([contenteditable="false"])) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+  -webkit-user-select: auto;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable="true"]) {
+  -webkit-user-drag: element;
+}

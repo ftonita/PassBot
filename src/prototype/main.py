@@ -1,20 +1,23 @@
-import sys
-from threading import Thread
-import time
+import mysql.connector
+
+from classic_utils import print_log
+from pyrogram_utils import main
+from my_socket import localhost
 
 
-from mysql_utils import *
-from classic_utils import *
-from pyrogram_utils import app
+print_log("Hello World!")
 
-if __name__ == '__main__':
-	print_log("Hello World!")
-	try:
-		database_connect_attempt()
-	except:	
-		print_log("Database connect error")
-	
-	os.system('rm -rf 21passbot.*')
-	app.run()
+try:
+    cnx = mysql.connector.connect(
+        user="root",
+        password="root",
+        host=localhost,
+        database="21_passbot"
+    )
 
-	print_log("End!")
+    cursor = cnx.cursor()
+    print_log("Database connection successful!")
+except Exception as _ex:
+    print_log(f"Database connect error: {_ex}")
+
+main()

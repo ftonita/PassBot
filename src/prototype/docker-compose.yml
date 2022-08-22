@@ -9,7 +9,7 @@ services:
 
   mysql_db:
     image: mysql
-    command: --default-authentication-plugin=mysql_native_password
+    command: --default-authentication-plugin=mysql_native_password 
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
@@ -17,6 +17,10 @@ services:
       - ./container_artifacts/mysql_db/:/var/lib/mysql/
     ports:
       - "3306:3306"
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    
+
   
   phpmyadmin:
     image: phpmyadmin
@@ -25,7 +29,7 @@ services:
       - "9001:80"
     environment:
       - PMA_ARBITRARY=1
-  
+      - PMA_HOST=host.docker.internal
   httpd:
     build: httpd/.
     ports:
