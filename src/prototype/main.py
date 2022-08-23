@@ -1,7 +1,7 @@
 import mysql.connector
-
+from threading import Thread
 from classic_utils import print_log
-from pyrogram_utils import main
+from pyrogram_utils import main, support
 from my_socket import localhost
 
 
@@ -20,4 +20,10 @@ try:
 except Exception as _ex:
     print_log(f"Database connect error: {_ex}")
 
-main()
+try:
+    _observer = Thread(target=support, args=())
+    _observer.start()
+    print_log("[OBSERVER] Thread has started!")
+    main()
+except Exception as _start:
+    print_log(f"[!!!Error] {_start}")
