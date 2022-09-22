@@ -1,4 +1,5 @@
-# Telegram-бот системы временных пропусков 21 School
+# Telegram-бот системы временных пропусков 
+# 21 School
 
 ## Back-end
 | Technology | Properties |
