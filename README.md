@@ -5,7 +5,7 @@
 | Technology | Properties |
 | --- | --- |
 | Python | 3.8, pyqrcode, asyncio, threads |
-| Pyrogram | - |
+| Pyrogram | 2.0 |
 | SQL | MySQL |
 
 ## Front-end
