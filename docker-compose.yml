@@ -1,0 +1,32 @@
+version: '3.0'
+
+services:
+
+  php-env:
+    build: .
+    volumes:
+      - ./container_artifacts/php-env:/var/www/html
+    ports:
+      - "9000:80"
+
+  mysql_db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password 
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./container_artifacts/mysql_db/:/var/lib/mysql/
+    ports:
+      - "3306:3306"
+    extra_hosts:
+      - host.docker.internal:host-gateway
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - "9001:80"
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=host.docker.internal

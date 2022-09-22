@@ -1,0 +1,1 @@
+{"buildTargets":["all","build","clean","docker","git","pep8","test"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}
